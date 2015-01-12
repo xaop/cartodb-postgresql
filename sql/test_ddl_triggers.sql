@@ -23,7 +23,7 @@ select 1 as i INTO c.t3;
 
 select
  cartodb_id, created_at=updated_at as "c=u",
- NOW() - updated_at < '1 secs' as "u<1s",
+ NOW() - updated_at < '3 secs' as "u<1s",
  the_geom, the_geom_webmercator,
  i
 from c.t3;
@@ -38,7 +38,7 @@ FROM CDB_TableMetadata WHERE tabname = 'c.t3'::regclass;
 select 1 as cartodb_id INTO c.t4;
 select
  cartodb_id, created_at=updated_at as "c=u",
- NOW() - updated_at < '1 secs' as "u<1s",
+ NOW() - updated_at < '3 secs' as "u<1s",
  the_geom, the_geom_webmercator
 from c.t4;
 select
@@ -55,7 +55,7 @@ alter table c.t3 rename column the_geom_webmercator to webmerc;
 
 select
  cartodb_id, created_at=updated_at as "c=u",
- NOW() - updated_at < '1 secs' as "u<1s",
+ NOW() - updated_at < '3 secs' as "u<1s",
  the_geom, the_geom_webmercator,
  i, webmerc
 from c.t3;
@@ -70,7 +70,7 @@ alter table c.t3 rename column the_geom_webmercator to webmerc2;
 
 select
  cartodb_id, created_at=updated_at as "c=u",
- NOW() - updated_at < '1 secs' as "u<1s",
+ NOW() - updated_at < '3 secs' as "u<1s",
  the_geom, the_geom_webmercator,
  i, webmerc, webmerc2
 from c.t3;
@@ -89,7 +89,7 @@ alter table c.t3 drop column the_geom_webmercator;
 
 select
  cartodb_id, created_at=updated_at as "c=u",
- NOW() - updated_at < '1 secs' as "u<1s",
+ NOW() - updated_at < '3 secs' as "u<1s",
  the_geom, the_geom_webmercator,
  i, webmerc, webmerc2
 from c.t3;
@@ -108,7 +108,7 @@ alter table c.t3 add column id2 int;
 
 select
  cartodb_id, created_at=updated_at as "c=u",
- NOW() - updated_at < '1 secs' as "u<1s",
+ NOW() - updated_at < '3 secs' as "u<1s",
  the_geom, the_geom_webmercator,
  i, webmerc, webmerc2, id2
 from c.t3;
